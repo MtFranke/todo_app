@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { AllComponent } from './all/all.component';
 import { ActiveComponent } from './active/active.component';
 import { CompletedComponent } from './completed/completed.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CompletedComponent } from './completed/completed.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

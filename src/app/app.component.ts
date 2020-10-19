@@ -17,20 +17,20 @@ export class AppComponent {
     this.activeVisible = false;
   }
 
-  LogIt(val){
-    this.activeVisible = val;
+  LogIt(val): void{
+    this.activeVisible = true;
     this.completedVisible = false;
     this.allVisible = false;
   }
-  ShowCompleted(val){
+  ShowCompleted(val): void{
     this.activeVisible = false;
-    this.completedVisible = val;
+    this.completedVisible = true;
     this.allVisible = false;
   }
-  ShowAll(val){
+  ShowAll(val): void{
     this.activeVisible = false;
     this.completedVisible = false;
-    this.allVisible = val;
+    this.allVisible = true;
   }
 
 
