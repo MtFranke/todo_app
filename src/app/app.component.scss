@@ -1,0 +1,10 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+#todo-container{
+  //background-color: blueviolet;
+  width: 608px;
+}

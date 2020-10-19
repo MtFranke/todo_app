@@ -1,0 +1,15 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  border-bottom: 1px solid #BDBDBD
+}
+
+span{
+  width: 89px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
