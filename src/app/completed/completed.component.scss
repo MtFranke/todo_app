@@ -1,0 +1,66 @@
+$container-top-items-height : 50px;
+
+.container{
+  display: grid;
+}
+.container-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 20px;
+}
+.container-bottom{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: end;
+  margin-top: 45px;
+}
+
+.container-todo{
+  display: grid;
+  grid-template-columns: 34px 1fr  24px;
+  align-items: center;
+  justify-items: start;
+
+}
+.mr-7{
+  margin-right: 7px;
+}
+.mt-30{
+  margin-top: 30px;
+}
+.task{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+
+.checkbox{
+  width: 24px;
+  height: 24px;
+}
+
+.btn{
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  width: 124px;
+  height: 40px;
+  color: white;
+  background: #EB5757;
+  border-radius: 4px;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.btn-text{
+  justify-self: start;
+
+}
+
+.btn-icon{
+  justify-self: end;
+}

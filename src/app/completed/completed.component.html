@@ -1,1 +1,15 @@
-<p>completed works!</p>
+<div class="container">
+  <div class="mt-30">
+    <div *ngFor="let todo of todoCompleted;let i = index" class="container-todo">
+      <input class="checkbox mr-7" type="checkbox" checked disabled>
+      <del class="task">{{todoCompleted[i].todo}}</del>
+      <img src="../../assets/delete-outline.png">
+    </div>
+    <div class="container-bottom">
+      <div class="btn">
+        <img class="btn-icon" src="../../assets/delete-outline-white.png">
+        <div class="btn-text">Delete all</div>
+      </div>
+    </div>
+  </div>
+</div>
