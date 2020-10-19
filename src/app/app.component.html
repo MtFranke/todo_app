@@ -6,7 +6,7 @@
       (eventEmitterAll)="ShowAll($event)"
       (eventEmitterCompleted)="ShowCompleted($event)"
     ></app-menu>
-    <app-all *ngIf="allVisible"></app-all>
+    <app-all [todoArr]="todoArr" (todoArrEvent)="Update($event)" *ngIf="allVisible"></app-all>
     <app-active *ngIf="activeVisible"></app-active>
     <app-completed *ngIf="completedVisible"></app-completed>
   </div>

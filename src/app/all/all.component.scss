@@ -8,6 +8,19 @@ $container-top-items-height : 50px;
   grid-template-columns: 1fr 1fr;
   margin-top: 20px;
 }
+.container-todo{
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  justify-items: start;
+
+}
+.mr-7{
+  margin-right: 7px;
+}
+.mt-30{
+  margin-top: 30px;
+}
 .input{
   width: 475px;
   height: $container-top-items-height;
@@ -26,4 +39,17 @@ button{
   font-size: 14px;
   color: white;
   justify-self: end;
+}
+
+.task{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000000;
+}
+
+.checkbox{
+  width: 24px;
+  height: 24px;
 }

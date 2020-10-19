@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Task } from './Interfaces/Task';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,17 @@ export class AppComponent {
   @Input() allVisible: boolean;
   @Input() activeVisible: boolean;
   @Input() completedVisible: boolean;
+  todoArr: Task[];
 
   constructor() {
     this.allVisible = true;
     this.completedVisible = false;
     this.activeVisible = false;
+
+    this.todoArr = [];
+    this.todoArr.push({todo: 'Do coding challenges1!', completed: false});
+    this.todoArr.push({todo: 'Do coding challenges2!', completed: false});
+    this.todoArr.push({todo: 'Do coding challenges3!', completed: false});
   }
 
   LogIt(val): void{
@@ -33,6 +40,9 @@ export class AppComponent {
     this.allVisible = true;
   }
 
+  Update(val: Task[]): void{
+  this.todoArr = val;
+  }
 
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Task } from '../Interfaces/Task';
 
 @Component({
@@ -8,14 +8,12 @@ import { Task } from '../Interfaces/Task';
 })
 export class AllComponent implements OnInit {
 
-  todoArr: Task[];
+  @Input() todoArr: Task[];
   todo: string;
+  @Output() todoArrEvent: EventEmitter<Task[]> = new EventEmitter<Task[]>();
 
   constructor() {
-    this.todoArr = [];
-    this.todoArr.push({todo: 'Do coding challenges1!', completed: false});
-    this.todoArr.push({todo: 'Do coding challenges2!', completed: false});
-    this.todoArr.push({todo: 'Do coding challenges3!', completed: false});
+
   }
 
   ngOnInit(): void {
@@ -23,14 +21,19 @@ export class AllComponent implements OnInit {
   AddTask(): void{
     if (this.todo !== ''){
       this.todoArr.push({todo: this.todo, completed: false});
+      this.todoArrEvent.emit(this.todoArr);
     }
   }
   TaskCompleted(i: number): void{
     if (this.todoArr[i].completed === true)
     {
       this.todoArr[i].completed = false;
+      this.todoArrEvent.emit(this.todoArr);
+
     }else {
       this.todoArr[i].completed = true;
+      this.todoArrEvent.emit(this.todoArr);
+
     }
   }
 
