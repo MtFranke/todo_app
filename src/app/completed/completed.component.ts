@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Task } from '../Interfaces/Task';
 
 @Component({
@@ -9,18 +9,32 @@ import { Task } from '../Interfaces/Task';
 export class CompletedComponent implements OnInit {
 
   @Input() todoArr: Task[];
-  todoCompleted: Task[];
-  constructor() { }
+  @Output() todoArrCompleted: EventEmitter<Task[]> = new EventEmitter<Task[]>();
+
+  constructor() {
+  }
 
   ngOnInit(): void {
 
-    this.todoCompleted = [];
-    for (let i = 0; i < this.todoArr.length; i++) {
-      if (this.todoArr[i].completed === true)
-      {
-          this.todoCompleted.push(this.todoArr[i]);
-      }
-    }
   }
 
+  Remove(index: number): void {
+    delete this.todoArr[index];
+
+    const filtered = this.todoArr.filter(el => el != null);
+    this.todoArr = filtered;
+
+    this.todoArrCompleted.emit(this.todoArr);
+  }
+
+  RemoveAll(): void {
+    for (let i = 0; i < this.todoArr.length; i++) {
+      if (this.todoArr[i].completed) {
+        delete this.todoArr[i];
+      }
+    }
+    const filtered = this.todoArr.filter(el => el != null);
+    this.todoArr = filtered;
+    this.todoArrCompleted.emit(this.todoArr);
+  }
 }

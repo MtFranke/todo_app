@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import { Task } from '../Interfaces/Task';
 
 @Component({
@@ -18,6 +18,11 @@ export class AllComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ngOnChanges(changes: SimpleChanges) {
+    this.todoArr.forEach(x => {
+      console.log(x);
+    });
+  }
   AddTask(): void{
     if (this.todo !== ''){
       this.todoArr.push({todo: this.todo, completed: false});
@@ -36,5 +41,6 @@ export class AllComponent implements OnInit {
 
     }
   }
+
 
 }

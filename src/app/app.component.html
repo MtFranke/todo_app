@@ -8,7 +8,7 @@
     ></app-menu>
     <app-all [todoArr]="todoArr" (todoArrEvent)="Update($event)" *ngIf="allVisible"></app-all>
     <app-active *ngIf="activeVisible"></app-active>
-    <app-completed [todoArr]="todoArr" *ngIf="completedVisible"></app-completed>
+    <app-completed (todoArrCompleted)="Update($event)" [todoArr]="todoArr" *ngIf="completedVisible"></app-completed>
   </div>
 </div>
 <router-outlet></router-outlet>

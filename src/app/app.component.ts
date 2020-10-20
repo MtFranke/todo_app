@@ -41,7 +41,9 @@ export class AppComponent {
   }
 
   Update(val: Task[]): void{
-  this.todoArr = val;
+
+    this.todoArr = [];
+    this.todoArr = val;
   }
 
 
