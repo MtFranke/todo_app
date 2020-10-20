@@ -1,1 +1,14 @@
-<p>active works!</p>
+<div>
+  <div class="container-top">
+    <input type="text" id="input-task" [(ngModel)]="todo" class="input">
+    <button (click)="AddTask()">Add</button>
+  </div>
+  <div class="mt-30">
+    <div *ngFor="let todo of todoArr;let i = index" class="container-todo">
+      <input class="checkbox mr-7" type="checkbox" [checked]="todo.completed" (click)="TaskCompleted(i)">
+      <div class="task" *ngIf="todoArr[i].completed==false">{{todoArr[i].todo}}</div>
+      <del class="task" *ngIf="todoArr[i].completed==true">{{todoArr[i].todo}}</del>
+
+    </div>
+  </div>
+</div>
