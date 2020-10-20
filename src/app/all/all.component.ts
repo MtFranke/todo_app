@@ -42,5 +42,8 @@ export class AllComponent implements OnInit {
     }
   }
 
+  LocalStorage(val: Task[]): void{
+    localStorage.setItem('tasks', JSON.stringify(val));
+  }
 
 }

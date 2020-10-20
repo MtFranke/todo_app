@@ -19,9 +19,7 @@ export class AppComponent {
     this.activeVisible = false;
 
     this.todoArr = [];
-    this.todoArr.push({todo: 'Do coding challenges1!', completed: false});
-    this.todoArr.push({todo: 'Do coding challenges2!', completed: false});
-    this.todoArr.push({todo: 'Do coding challenges3!', completed: false});
+    this.todoArr = this.GetLocalStorage();
   }
 
   LogIt(val): void{
@@ -41,11 +39,20 @@ export class AppComponent {
   }
 
   Update(val: Task[]): void{
-
     this.todoArr = [];
     this.todoArr = val;
+    this.LocalStorage(val);
+
   }
 
+  LocalStorage(val: Task[]): void{
+    localStorage.setItem('tasks', JSON.stringify(val));
+  }
+
+  GetLocalStorage(): Task[]{
+    const data = JSON.parse(localStorage.getItem('tasks'));
+    return data;
+  }
 
 
 }
