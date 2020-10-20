@@ -5,19 +5,26 @@
   border-bottom: 1px solid #BDBDBD
 }
 
-span{
+.menu-item{
   width: 89px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
-  margin-bottom: 18px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-span:hover{
+.menu-item:hover{
+
   width: 89px;
   height: 4px;
   bottom: 0;
+  left: 0;
   background: #2F80ED;
   border-radius: 4px 4px 0px 0px;
+  z-index: 1;
+  //box-shadow: inset 0 -10px 0 0 #2f80ed;
 }
+
+

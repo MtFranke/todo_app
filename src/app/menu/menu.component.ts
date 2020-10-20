@@ -31,7 +31,6 @@ export class MenuComponent implements OnInit {
   EmitActiveVisible(): void{
     this.activeVisible = !this.activeVisible;
     this.eventEmitterActive.emit(this.activeVisible);
-    console.log(this.activeVisible);
   }
   EmitCompletedVisible(): void{
     this.completedVisible = !this.completedVisible;

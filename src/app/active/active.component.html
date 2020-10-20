@@ -1,7 +1,9 @@
 <div>
   <div class="container-top">
-    <input type="text" id="input-task" [(ngModel)]="todo" class="input">
-    <button (click)="AddTask()">Add</button>
+    <input type="text" id="input-task" [(ngModel)]="todo" class="input no-outline" placeholder="add details">
+    <div class="button" (click)="AddTask()">
+      <div style="text-align: center;align-self: center">Add</div>
+    </div>
   </div>
   <div class="mt-30">
     <div *ngFor="let todo of todoArr;let i = index" class="container-todo">
