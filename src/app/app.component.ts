@@ -50,7 +50,11 @@ export class AppComponent {
   }
 
   GetLocalStorage(): Task[]{
-    const data = JSON.parse(localStorage.getItem('tasks'));
+    let data = JSON.parse(localStorage.getItem('tasks'));
+    if (data == null)
+    {
+     data = [];
+    }
     return data;
   }
 
