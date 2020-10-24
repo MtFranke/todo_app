@@ -5,3 +5,10 @@ Hosted solution available at [click](https://mateuszfranke.github.io/todo_app/)
 
 #### Tips
 Data is stored in `local storage`
+
+## User stories
+- I can add a new task
+- I can complete a task
+- I can toggle between All, Active and Completed
+- I can remove one or all tasks under the Completed tab
+- Store the data in local storage that when I refresh the page I can still see my progress
